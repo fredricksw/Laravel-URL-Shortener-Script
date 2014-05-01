@@ -1,0 +1,26 @@
+body, input {
+	background: url('../img/bg.png');
+	font: 1em Tahoma, serif;
+}
+
+.title {
+	font-weight: normal;
+}
+
+.container {
+	width: 100%;
+	max-height: 600px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+input {
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	margin: 0;
+}
+
+input[type="url"] {
+	width: 300px;
+}
