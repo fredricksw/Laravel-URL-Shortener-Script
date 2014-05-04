@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1 class="title">Short the URL</h1>
+			<h1 class="title">Smashin' your long URL's!</h1>
 
 			@if($errors->has('url'))
 				<p>{{ $errors->first('url') }}</p>
@@ -16,10 +16,10 @@
 			@if(Session::has('global'))
 				<p>{{ Session::get('global') }}</p>
 			@endif
-			<form action="{{ URL::action('make') }}" method="post">
-				<input type="url" name="url"  value="http://" autocomplete="off" {{ Input::old('url') ? 'value="'. e(Input::old('url')) . '"' : '' }}>
-				<input type="submit" value="Shorten">
-			</form>
+			{{Form::open(['action' => 'LinkController@make', 'method' => 'post'])}}
+			  {{Input::text('url', e(Input::old('url') or ''))}}
+				{{Input::submit('Smash it!')}}
+			{{Form::close()}}
 		</div>
 	</body>
 </html>
